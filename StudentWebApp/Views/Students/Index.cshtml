@@ -1,0 +1,27 @@
+@model List<Student>
+<h1>Lista studentów</h1>
+<a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="Create">Dodaj</a>
+<form method="get">
+    <input type="text" name="query" id="query" />
+    <button type="submit">Search</button>
+</form>
+<table class="table">
+    <tr>
+        <th>IdStudent</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Address</th>
+        <th>Email</th>
+    </tr>
+    <tr>
+        @foreach (var st in Model)
+        {
+            <tr>
+                <td>@st.IdStudent</td>
+                <td>@st.FirstName</td>
+                <td>@st.LastName</td>
+                <td>@st.Address</td>
+                <td>@st.Email</td>
+            </tr>
+        }
+</table>
